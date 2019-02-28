@@ -1,0 +1,36 @@
+{
+  "project": {
+    "text": "Project Name"
+  },
+  "feature": {
+    "text": "Feature Name"
+  },
+  "weather": {
+    "inputtable": true,
+    "type": "String",
+    "defaultValue": "How is the weather today?"
+  },
+  "items": [
+    {
+      "item1": {
+        "text": "item1"
+      },
+      "item2": {
+        "text": "item2"
+      },
+      "item3": {
+        "text": "item3"
+      },
+      "result": {
+        "inputtable": true,
+        "type": "Boolean",
+        "defaultValue": false
+      },
+      "description":{
+        "inputtable": true,
+        "type": "String",
+        "defaultValue": ""
+      }
+    }
+  ]
+}
