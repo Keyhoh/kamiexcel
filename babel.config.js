@@ -1,5 +1,12 @@
 module.exports = {
-  presets: [
-    '@vue/app'
-  ]
+    presets: [
+        ["env", {"modules": false}]
+    ],
+    env: {
+        "test": {
+            "presets": [
+                ["env", {"targets": {"node": "current"}}]
+            ]
+        }
+    }
 }
