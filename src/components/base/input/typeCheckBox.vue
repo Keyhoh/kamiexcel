@@ -1,25 +1,25 @@
 <template>
-    <div class="form-group">
-        <input type="text" class="form-control" v-model="text">
+    <div>
+        <input type="checkbox" v-model="bool">
     </div>
 </template>
 
 <script>
     export default {
-        name: "typeText",
+        name: "typeCheckBox",
         props: {
-            value: String
+            value: Boolean
         },
         data() {
             return {
-                text: ""
+                bool: false
             }
         },
         updated() {
-            this.$emit("update:value", this.text);
+            this.$emit("update:value", this.bool);
         },
         mounted() {
-            this.text = this.value;
+            this.bool = this.value;
         }
     }
 </script>

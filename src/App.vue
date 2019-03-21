@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app" class="form-group">
+        {{ data }}
+        <input-text v-bind:value.sync="data.text"/>
+        <input-check-box v-bind:value.sync="data.bool"/>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import inputText from './components/base/input/typeText'
+    import inputCheckBox from "./components/base/input/typeCheckBox"
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'app',
+        components: {
+            inputText: inputText,
+            inputCheckBox: inputCheckBox
+        },
+        data() {
+            return {
+                data: {
+                    text: "Hello",
+                    bool: false
+                }
+            };
+        }
+    }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+
 </style>
