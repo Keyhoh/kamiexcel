@@ -1,20 +1,27 @@
 <template>
-    <b-form-select v-model="selected" :options="items"/>
+    <b-form-select v-model="selected" :options="option.options"/>
 </template>
 
 <script>
     export default {
-        name: "typeList",
+        name: "typeSelect",
+        props: {
+            value: String,
+            option: {
+                options: Array,
+            },
+        },
         data() {
             return {
                 selected: null,
-                items: [
-                    {value: null, text: 'Please select an option'},
-                    {value: 'a', text: 'This is First option'},
-                    {value: 'b', text: 'This is Second option'}
-                ]
             }
-        }
+        },
+        updated() {
+            this.$emit("update:value", this.selected);
+        },
+        mounted() {
+            this.selected = this.value;
+        },
     }
 </script>
 

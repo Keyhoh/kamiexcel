@@ -1,18 +1,16 @@
 <template>
-    <div class="form-group">
-        <input type="text" class="form-control" v-model="text">
-    </div>
+    <b-form-input v-model="text" type="text"/>
 </template>
 
 <script>
     export default {
         name: "typeText",
         props: {
-            value: String
+            value: String,
         },
         data() {
             return {
-                text: ""
+                text: "",
             }
         },
         updated() {
@@ -20,7 +18,7 @@
         },
         mounted() {
             this.text = this.value;
-        }
+        },
     }
 </script>
 

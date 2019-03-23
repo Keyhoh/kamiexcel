@@ -1,26 +1,24 @@
 <template>
-    <div>
-        <input type="checkbox" v-model="bool">
-    </div>
+    <b-form-checkbox v-model="checked" type="checkbox"/>
 </template>
 
 <script>
     export default {
         name: "typeCheckBox",
         props: {
-            value: Boolean
+            value: Boolean,
         },
         data() {
             return {
-                bool: false
+                checked: false,
             }
         },
         updated() {
-            this.$emit("update:value", this.bool);
+            this.$emit("update:value", this.checked);
         },
         mounted() {
-            this.bool = this.value;
-        }
+            this.checked = this.value;
+        },
     }
 </script>
 
