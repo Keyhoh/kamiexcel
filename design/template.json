@@ -7,7 +7,7 @@
   },
   "weather": {
     "inputtable": true,
-    "type": "String",
+    "inputType": "String",
     "defaultValue": "How is the weather today?"
   },
   "items": [
@@ -23,12 +23,12 @@
       },
       "result": {
         "inputtable": true,
-        "type": "Boolean",
+        "inputType": "Boolean",
         "defaultValue": false
       },
       "description":{
         "inputtable": true,
-        "type": "String",
+        "inputType": "String",
         "defaultValue": ""
       }
     }
