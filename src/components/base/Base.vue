@@ -1,21 +1,25 @@
 <template>
     <input-text
             v-if="inputType === 'text'"
-            :value.sync="value"
+            :value="value"
+            @update:value="updateValue"
     ></input-text>
     <input-checkbox
             v-else-if="inputType === 'checkbox'"
-            :value.sync="value"
+            :value="value"
+            @update:value="updateValue"
     ></input-checkbox>
     <input-select
             v-else-if="inputType === 'select'"
-            :value.sync="value"
+            :value="value"
             :option="option"
+            @update:value="updateValue"
     ></input-select>
     <input-range
             v-else-if="inputType === 'range'"
-            :value.sync="value"
+            :value="value"
             :option="option"
+            @update:value="updateValue"
     ></input-range>
 </template>
 
@@ -38,9 +42,12 @@
             value: [String, Number, Boolean],
             option: Object,
         },
-        updated(){
-            this.$emit("update:value", this.value);
+        methods: {
+            updateValue(event) {
+                this.$emit("update:value", event);
+            },
         },
+
     }
 </script>
 

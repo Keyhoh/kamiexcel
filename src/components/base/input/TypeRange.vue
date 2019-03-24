@@ -1,5 +1,5 @@
 <template>
-    <b-form-input type="range" :min=option.min :max=option.max v-model="position" number/>
+    <b-form-input type="range" v-model="position" :min="option.min" :max="option.max" number/>
 </template>
 
 <script>

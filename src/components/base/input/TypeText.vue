@@ -1,5 +1,5 @@
 <template>
-    <b-form-input v-model="text" type="text"/>
+    <b-form-input v-model="text"/>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-    <b-form-checkbox v-model="checked" type="checkbox"/>
+    <b-form-checkbox v-model="checked"/>
 </template>
 
 <script>
