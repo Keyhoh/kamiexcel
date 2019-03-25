@@ -1,9 +1,13 @@
 import {mount} from "@vue/test-utils";
-import App from "@/App.vue";
+import Vue from "vue";
+import BootstrapVue from "bootstrap-vue";
+import App from "../src/App.vue";
 
-describe("App", ()=>{
-    it("is a Vue instance", ()=>{
-        const wrapper = mount(App);
+Vue.use(BootstrapVue);
+
+describe("App", () => {
+    it("is a Vue instance", () => {
+        const wrapper = mount(Vue.extend(App));
         expect(wrapper.isVueInstance()).toBeTruthy();
     });
 });

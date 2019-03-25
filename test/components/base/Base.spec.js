@@ -1,9 +1,9 @@
 import {mount} from "@vue/test-utils";
-import inputTypeText from "@/components/base/input/typeText.vue";
+import base from "../../../src/components/base/Base.vue"
 
-describe("typeText", () => {
+describe("base", () => {
     it("is a Vue instance", () => {
-        const wrapper = mount(inputTypeText);
+        const wrapper = mount(base);
         expect(wrapper.isVueInstance()).toBeTruthy();
     });
 });
