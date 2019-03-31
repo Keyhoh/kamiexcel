@@ -8,8 +8,10 @@
         props: {
             value: Number,
             option: {
-                min: Number,
-                max: Number,
+                type: Object,
+                default() {
+                    return {min: 0, max: 100};
+                },
             },
         },
         data() {

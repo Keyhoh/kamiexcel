@@ -18,9 +18,9 @@ describe("TypeCheckbox", () => {
         expect(defaultData.checked).toBe(false);
     });
     it("receives the correct value", () => {
-        const propData = {value: true};
-        const wrapper = TestComponent.getWrapper(TypeCheckbox, propData);
-        TestComponent.receivesCorrectlyOnMount(wrapper, propData);
+        const props = {value: true};
+        const wrapper = TestComponent.getWrapper(TypeCheckbox, props);
+        TestComponent.receivesCorrectlyOnMount(wrapper, props);
 
         wrapper.find("input").trigger("click");
         expect(wrapper.emitted()["update:value"].length).toBe(2);

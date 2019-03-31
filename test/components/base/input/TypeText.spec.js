@@ -19,9 +19,9 @@ describe("TypeText", () => {
         expect(defaultData.text).toBe("");
     });
     it("receives the correct value", () => {
-        const propData = {value: "ABC"};
-        const wrapper = TestComponent.getWrapper(TypeText, propData);
-        TestComponent.receivesCorrectlyOnMount(wrapper, propData);
+        const props = {value: "ABC"};
+        const wrapper = TestComponent.getWrapper(TypeText, props);
+        TestComponent.receivesCorrectlyOnMount(wrapper, props);
 
         wrapper.setValue("DEF");
         expect(wrapper.emitted()["update:value"].length).toBe(2);
