@@ -23,7 +23,7 @@
                     checked: false,
                     position: 0,
                     range: {min: -1, max: 1},
-                    selected: "first",
+                    // selected: "first",
                     options: {
                         options: [
                             {value: null, text: "Please select an option"},

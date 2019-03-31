@@ -3,7 +3,7 @@ import BootstrapVue from "bootstrap-vue";
 
 import TypeCheckbox from "../../../../src/components/base/input/TypeCheckbox.vue";
 
-import TestComponent from "../../testComponentGetters";
+import TestComponent from "../../TestComponentUtil";
 
 Vue.use(BootstrapVue);
 

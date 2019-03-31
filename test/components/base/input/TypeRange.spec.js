@@ -3,7 +3,7 @@ import BootstrapVue from "bootstrap-vue";
 
 import TypeRange from "../../../../src/components/base/input/TypeRange";
 
-import TestComponent from "../../testComponentGetters";
+import TestComponent from "../../TestComponentUtil";
 
 Vue.use(BootstrapVue);
 

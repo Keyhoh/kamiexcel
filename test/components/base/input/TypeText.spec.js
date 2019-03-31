@@ -3,7 +3,7 @@ import BootstrapVue from "bootstrap-vue";
 
 import TypeText from "../../../../src/components/base/input/TypeText.vue";
 
-import TestComponent from "../../testComponentGetters";
+import TestComponent from "../../TestComponentUtil";
 
 Vue.use(BootstrapVue);
 

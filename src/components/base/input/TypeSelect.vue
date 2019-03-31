@@ -8,7 +8,10 @@
         props: {
             value: String,
             option: {
-                options: Array,
+                type: Object,
+                default() {
+                    return {options: []};
+                }
             },
         },
         data() {
