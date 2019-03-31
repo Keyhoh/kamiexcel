@@ -1,6 +1,12 @@
 import {mount} from "@vue/test-utils";
 import Vue from "vue";
 
+/**
+ * return the wrapper that contains vue component
+ * @param Component
+ * @param propsData
+ * @returns {Wrapper<any> | Wrapper<Vue>}
+ */
 const getWrapper = (Component, propsData) => {
     return mount(
         Vue.extend(Component),
@@ -8,8 +14,10 @@ const getWrapper = (Component, propsData) => {
     );
 };
 
-const getRenderedValue = (Component, propsData) => {
-    return getWrapper(Component, propsData).element.value;
+const receivesCorrectlyOnMount = (wrapper, propData) => {
+    expect(wrapper.emitted()["update:value"]).toBeTruthy();
+    expect(wrapper.emitted()["update:value"].length).toBe(1);
+    expect(wrapper.emitted()["update:value"][0]).toEqual([propData.value]);
 };
 
-export default {getWrapper, getRenderedValue};
+export default {getWrapper, receivesCorrectlyOnMount};

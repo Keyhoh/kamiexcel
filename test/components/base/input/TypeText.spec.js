@@ -18,15 +18,10 @@ describe("TypeText", () => {
         const defaultData = TypeText.data();
         expect(defaultData.text).toBe("");
     });
-    it("renders correctly with different props", () => {
-        expect(TestComponent.getRenderedValue(TypeText, {value: "Hello"})).toBe("Hello");
-        expect(TestComponent.getRenderedValue(TypeText, {value: "Bye"})).toBe("Bye");
-    });
     it("receives the correct value", () => {
-        const wrapper = TestComponent.getWrapper(TypeText, {value: "ABC"});
-        expect(wrapper.emitted()["update:value"]).toBeTruthy();
-        expect(wrapper.emitted()["update:value"].length).toBe(1);
-        expect(wrapper.emitted()["update:value"][0]).toEqual(["ABC"]);
+        const propData = {value: "ABC"};
+        const wrapper = TestComponent.getWrapper(TypeText, propData);
+        TestComponent.receivesCorrectlyOnMount(wrapper, propData);
 
         wrapper.setValue("DEF");
         expect(wrapper.emitted()["update:value"].length).toBe(2);
