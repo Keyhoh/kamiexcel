@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import base from "./components/base/Base"
+    import base from "./components/base/InputController"
 
     export default {
         name: 'app',
