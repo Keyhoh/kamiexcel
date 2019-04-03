@@ -1,10 +1,10 @@
 <template>
     <div id="app" class="form-group mx-3">
         {{ data }}
-        <base-component inputType="text" :value.sync="data.text"/>
-        <base-component inputType="checkbox" :value.sync="data.checked"/>
-        <base-component inputType="select" :value.sync="data.selected" :option="data.options"/>
-        <base-component inputType="range" :value.sync="data.position" :option="data.range"/>
+        <base-component inputType="text" :value.sync="data.text" edit="true"/>
+        <base-component inputType="checkbox" :value.sync="data.checked" edit="true"/>
+        <base-component inputType="select" :value.sync="data.selected" :option="data.options" edit="true"/>
+        <base-component inputType="range" :value.sync="data.position" :option="data.range" edit="true"/>
     </div>
 </template>
 
