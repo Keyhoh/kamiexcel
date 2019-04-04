@@ -1,5 +1,5 @@
 <template>
-    <b-form-checkbox v-model="checked" :disabled="disabled"/>
+    <b-form-checkbox v-model="checked" />
 </template>
 
 <script>

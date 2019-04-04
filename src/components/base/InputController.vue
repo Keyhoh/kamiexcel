@@ -1,30 +1,32 @@
 <template>
-    <input-text
-            v-if="inputType === 'text'"
-            :value="value"
-            @update:value="updateValue"
-            :disabled="edit"
-    ></input-text>
-    <input-checkbox
-            v-else-if="inputType === 'checkbox'"
-            :value="value"
-            @update:value="updateValue"
-            :disabled="edit"
-    ></input-checkbox>
-    <input-select
-            v-else-if="inputType === 'select'"
-            :value="value"
-            :option="option"
-            @update:value="updateValue"
-            :disabled="edit"
-    ></input-select>
-    <input-range
-            v-else-if="inputType === 'range'"
-            :value="value"
-            :option="option"
-            @update:value="updateValue"
-            :disabled="edit"
-    ></input-range>
+    <div class="inputComponent">
+        <input-text
+                v-if="inputType === 'text'"
+                :value="value"
+                @update:value="updateValue"
+                :disabled="!edit"
+        ></input-text>
+        <input-checkbox
+                v-else-if="inputType === 'checkbox'"
+                :value="value"
+                @update:value="updateValue"
+                :disabled="!edit"
+        ></input-checkbox>
+        <input-select
+                v-else-if="inputType === 'select'"
+                :value="value"
+                :option="option"
+                @update:value="updateValue"
+                :disabled="!edit"
+        ></input-select>
+        <input-range
+                v-else-if="inputType === 'range'"
+                :value="value"
+                :option="option"
+                @update:value="updateValue"
+                :disabled="!edit"
+        ></input-range>
+    </div>
 </template>
 
 <script>
@@ -61,5 +63,7 @@
 </script>
 
 <style scoped>
-
+    .inputComponent {
+        display: inline-block;
+    }
 </style>
