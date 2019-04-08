@@ -1,5 +1,5 @@
 <template>
-    <b-form-input v-model="text"/>
+    <b-form-input v-model="text" :disabled="!editable"/>
 </template>
 
 <script>
@@ -7,6 +7,7 @@
         name: "typeText",
         props: {
             value: String,
+            editable: Boolean,
         },
         data() {
             return {

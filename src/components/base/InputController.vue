@@ -1,32 +1,30 @@
 <template>
-    <div class="inputComponent">
-        <input-text
-                v-if="inputType === 'text'"
-                :value="value"
-                @update:value="updateValue"
-                :disabled="!edit"
-        ></input-text>
-        <input-checkbox
-                v-else-if="inputType === 'checkbox'"
-                :value="value"
-                @update:value="updateValue"
-                :disabled="!edit"
-        ></input-checkbox>
-        <input-select
-                v-else-if="inputType === 'select'"
-                :value="value"
-                :option="option"
-                @update:value="updateValue"
-                :disabled="!edit"
-        ></input-select>
-        <input-range
-                v-else-if="inputType === 'range'"
-                :value="value"
-                :option="option"
-                @update:value="updateValue"
-                :disabled="!edit"
-        ></input-range>
-    </div>
+    <input-text
+            v-if="inputType === 'text'"
+            :value="value"
+            @update:value="updateValue"
+            :editable="editable"
+    ></input-text>
+    <input-checkbox
+            v-else-if="inputType === 'checkbox'"
+            :value="value"
+            @update:value="updateValue"
+            :editable="editable"
+    ></input-checkbox>
+    <input-select
+            v-else-if="inputType === 'select'"
+            :value="value"
+            :option="option"
+            @update:value="updateValue"
+            :editable="editable"
+    ></input-select>
+    <input-range
+            v-else-if="inputType === 'range'"
+            :value="value"
+            :option="option"
+            @update:value="updateValue"
+            :editable="editable"
+    ></input-range>
 </template>
 
 <script>
@@ -40,7 +38,7 @@
     import inputRange from "./input/TypeRange";
 
     export default {
-        name: "Base",
+        name: "InputController",
         components: {
             inputText: inputText,
             inputCheckbox: inputCheckbox,
@@ -50,8 +48,18 @@
         props: {
             inputType: String,
             value: [String, Number, Boolean],
-            option: Object,
-            edit: Boolean,
+            option: {
+                type: Object,
+                default() {
+                    return {};
+                },
+            },
+            editable: {
+                type: Boolean,
+                default() {
+                    return true;
+                },
+            },
         },
         methods: {
             updateValue(event) {
@@ -63,7 +71,4 @@
 </script>
 
 <style scoped>
-    .inputComponent {
-        display: inline-block;
-    }
 </style>

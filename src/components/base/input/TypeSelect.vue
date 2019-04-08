@@ -1,5 +1,9 @@
 <template>
-    <b-form-select v-model="selected" :options="option.options"/>
+    <b-form-select
+            v-model="selected"
+            :options="option.options"
+            :disabled="!editable"
+    />
 </template>
 
 <script>
@@ -13,6 +17,7 @@
                     return {options: []};
                 }
             },
+            editable: Boolean,
         },
         data() {
             return {

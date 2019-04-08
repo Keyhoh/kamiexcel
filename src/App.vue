@@ -1,12 +1,12 @@
 <template>
     <div id="app" class="form-group mx-3">
         {{ data }}
-        <base-label :value.sync="data.label1" :edit="false"/>
         <base-label :value.sync="data.label2" :edit="true"/>
-        <base-input inputType="text" :value.sync="data.text" :edit="false"/>
-        <base-input inputType="checkbox" :value.sync="data.checked" :edit="true"/>
-        <base-input inputType="select" :value.sync="data.selected" :option="data.options" :edit="true"/>
-        <base-input inputType="range" :value.sync="data.position" :option="data.range" :edit="true"/>
+        <base-input inputType="text" :value.sync="data.text" :editable="false"/>
+        <base-label :value.sync="data.label1" :editable="false"/>
+        <base-input inputType="checkbox" :value.sync="data.checked" :editable="true"/>
+        <base-input inputType="select" :value.sync="data.selected" :option="data.options" :editable="false"/>
+        <base-input inputType="range" :value.sync="data.position" :option="data.range" :editable="true"/>
     </div>
 </template>
 
@@ -18,7 +18,7 @@
         name: 'app',
         components: {
             baseInput: baseInput,
-            baseLabel : baseLabel,
+            baseLabel: baseLabel,
         },
         data() {
             return {
@@ -36,11 +36,11 @@
                             {value: "first", text: "This is the First option"},
                             {value: "second", text: "This is the Second option"},
                             {value: "third", text: "This is the Third option"},
-                        ]
-                    }
-                }
+                        ],
+                    },
+                },
             };
-        }
+        },
     }
 </script>
 

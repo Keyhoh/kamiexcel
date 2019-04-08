@@ -18,8 +18,20 @@ describe("TypeText", () => {
         const defaultData = TypeText.data();
         expect(defaultData.text).toBe("");
     });
+    it("is editable", () => {
+        const props = {value: "ABC", editable: true};
+        const wrapper = TestComponent.getWrapper(TypeText, props);
+
+        expect(wrapper.attributes("disabled")).toBeFalsy();
+    });
+    it("is editable", () => {
+        const props = {value: "ABC", editable: false};
+        const wrapper = TestComponent.getWrapper(TypeText, props);
+
+        expect(wrapper.attributes("disabled")).toBeTruthy();
+    });
     it("receives the correct value", () => {
-        const props = {value: "ABC"};
+        const props = {value: "ABC", editable: true};
         const wrapper = TestComponent.getWrapper(TypeText, props);
         TestComponent.receivesCorrectlyOnMount(wrapper, props);
 

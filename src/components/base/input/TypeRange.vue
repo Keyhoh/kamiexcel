@@ -1,5 +1,12 @@
 <template>
-    <b-form-input type="range" v-model="position" :min="option.min" :max="option.max" number/>
+    <b-form-input
+            type="range"
+            v-model="position"
+            :min="option.min"
+            :max="option.max"
+            :disabled="!editable"
+            number
+    />
 </template>
 
 <script>
@@ -13,6 +20,7 @@
                     return {min: 0, max: 100};
                 },
             },
+            editable: Boolean,
         },
         data() {
             return {

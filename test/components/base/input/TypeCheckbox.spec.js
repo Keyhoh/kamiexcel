@@ -17,8 +17,20 @@ describe("TypeCheckbox", () => {
         const defaultData = TypeCheckbox.data();
         expect(defaultData.checked).toBe(false);
     });
+    it("is editable", () => {
+        const props = {value: true, editable: true};
+        const wrapper = TestComponent.getWrapper(TypeCheckbox, props);
+
+        expect(wrapper.find("input").attributes("disabled")).toBeFalsy();
+    });
+    it("is not editable", () => {
+        const props = {value: true, editable: false};
+        const wrapper = TestComponent.getWrapper(TypeCheckbox, props);
+
+        expect(wrapper.find("input").attributes("disabled")).toBeTruthy();
+    });
     it("receives the correct value", () => {
-        const props = {value: true};
+        const props = {value: true, editable: true};
         const wrapper = TestComponent.getWrapper(TypeCheckbox, props);
         TestComponent.receivesCorrectlyOnMount(wrapper, props);
 

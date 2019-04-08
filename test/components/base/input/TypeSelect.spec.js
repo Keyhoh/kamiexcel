@@ -23,6 +23,38 @@ describe("TypeSelect", () => {
         const defaultOptionProp = TypeSelect.props.option.default();
         expect(defaultOptionProp.options).toEqual([]);
     });
+    it("is editable", () => {
+        const props = {
+            value: "first",
+            option: {
+                options: [
+                    {value: "first", text: "first option"},
+                    {value: "second", text: "second option"},
+                    {value: "third", text: "third option"},
+                ]
+            },
+            editable: true,
+        };
+        const wrapper = TestComponent.getWrapper(TypeSelect, props);
+
+        expect(wrapper.attributes("disabled")).toBeFalsy();
+    });
+    it("is not editable", () => {
+        const props = {
+            value: "first",
+            option: {
+                options: [
+                    {value: "first", text: "first option"},
+                    {value: "second", text: "second option"},
+                    {value: "third", text: "third option"},
+                ]
+            },
+            editable: false,
+        };
+        const wrapper = TestComponent.getWrapper(TypeSelect, props);
+
+        expect(wrapper.attributes("disabled")).toBeTruthy();
+    });
     it("receives the correct value", () => {
         const props = {
             value: "first",
@@ -32,7 +64,8 @@ describe("TypeSelect", () => {
                     {value: "second", text: "second option"},
                     {value: "third", text: "third option"},
                 ]
-            }
+            },
+            editable: true,
         };
         const wrapper = TestComponent.getWrapper(TypeSelect, props);
         TestComponent.receivesCorrectlyOnMount(wrapper, props);

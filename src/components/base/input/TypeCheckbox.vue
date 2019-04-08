@@ -1,5 +1,5 @@
 <template>
-    <b-form-checkbox v-model="checked" />
+    <b-form-checkbox v-model="checked" :disabled="!editable"/>
 </template>
 
 <script>
@@ -7,7 +7,7 @@
         name: "typeCheckBox",
         props: {
             value: Boolean,
-            disabled: Boolean,
+            editable: Boolean,
         },
         data() {
             return {

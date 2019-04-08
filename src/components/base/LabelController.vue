@@ -3,6 +3,7 @@
         <input-text
                 v-if="edit"
                 :value="value"
+                :editable="true"
                 @update:value="updateValue"
         ></input-text>
         {{ edit ? "" : value }}
@@ -22,7 +23,12 @@
             inputText: inputText,
         },
         props: {
-            edit: Boolean,
+            edit: {
+                type: Boolean,
+                default() {
+                    return false
+                },
+            },
             value: String,
         },
         methods: {
@@ -34,7 +40,4 @@
 </script>
 
 <style scoped>
-    .labelComponent {
-        display: inline-block;
-    }
 </style>
