@@ -21,7 +21,7 @@ describe("TypeCheckbox", () => {
         const props = {value: true, editable: true};
         const wrapper = TestComponent.getWrapper(TypeCheckbox, props);
 
-        expect(wrapper.find("input").attributes("disabled")).toBeFalsy();
+        expect(wrapper.find("input").attributes("disabled")).toBeUndefined();
     });
     it("is not editable", () => {
         const props = {value: true, editable: false};

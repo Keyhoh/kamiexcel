@@ -22,7 +22,7 @@ describe("TypeText", () => {
         const props = {value: "ABC", editable: true};
         const wrapper = TestComponent.getWrapper(TypeText, props);
 
-        expect(wrapper.attributes("disabled")).toBeFalsy();
+        expect(wrapper.attributes("disabled")).toBeUndefined();
     });
     it("is editable", () => {
         const props = {value: "ABC", editable: false};

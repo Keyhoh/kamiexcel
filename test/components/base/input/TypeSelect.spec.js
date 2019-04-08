@@ -37,7 +37,7 @@ describe("TypeSelect", () => {
         };
         const wrapper = TestComponent.getWrapper(TypeSelect, props);
 
-        expect(wrapper.attributes("disabled")).toBeFalsy();
+        expect(wrapper.attributes("disabled")).toBeUndefined();
     });
     it("is not editable", () => {
         const props = {

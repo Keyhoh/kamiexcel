@@ -51,7 +51,6 @@ describe("InputController", () => {
             option: {
                 options: [
                     {value: "first", text: "first option"},
-                    {value: "first", text: "first option"},
                     {value: "second", text: "second option"},
                 ],
             },

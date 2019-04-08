@@ -28,7 +28,7 @@ describe("TypeRange", () => {
         const props = {value: 3, option: {min: -5, max: 5}, editable: true};
         const wrapper = TestComponent.getWrapper(TypeRange, props);
 
-        expect(wrapper.attributes("disabled")).toBeFalsy();
+        expect(wrapper.attributes("disabled")).toBeUndefined();
     });
     it("is not editable", () => {
         const props = {value: 3, option: {min: -5, max: 5}, editable: false};
